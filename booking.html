@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Inline styles to ensure button visibility */
+        button {
+            display: inline-block; /* Make the button inline */
+    padding: 10px 20px; /* Adjust padding for a short button */
+    font-size: 1rem; /* Adjust text size */
+    color: white; /* Text color */
+    background-color: #007bff; /* Button background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add hover effect */
+    width: auto; /* Ensure it's short and adjusts to the content */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        #bookingForm{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+      <header>
+        <b>
+            <a href="home.html"> AutoMob-Mechanic</a>
+        </b>
+        <nav>
+            <span id="userName"></span>
+            <a href="home.html">Home</a>|
+            <a href="services.html">Services</a>|
+            <a href="booking.html">Booking</a> |
+            <a href="#" id="login">Logout</a>
+            <a href="mailto:contact@automob.co.in">contact@automob.co.in &#9993;</a>|
+            <a>999-999-9999 &#9743;</a>
+        </nav>
+      </header>
+      <main>
+        <h2>Book Your Service</h2>
+        <form id="bookingForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="John Doe" required>
+            </div>
+            <div>
+                <label for="emailID">Email ID</label>
+                <input type="email" id="emailID" placeholder="john.doe@example.com" required>
+            </div>
+            <div>
+                <label for="phNo">Phone Number</label>
+                <select id="phNo">
+                    <option>+91</option>
+                    <option>+213</option>
+                    <option>+244</option>
+                    <option>+61</option>
+                </select>
+                <input type="tel" id="phoneNo" placeholder="9284034326" required pattern="[0-9]{10}">
+            </div>
+            <div>
+                <label for="selectService">Select Service</label>
+                <select id="selectService" name="selectService">
+                    <option value="preventive maintenance service">Preventive Maintenance Service</option>
+                    <option value="body repair service">Body Repair Service</option>
+                    <option value="car care service">Car Care Service</option>
+                </select>
+            </div>
+            <div>
+                <label for="carMake">Car Make</label>
+                <input type="text" id="carMake" placeholder="Suzuki, Toyota..." required>
+            </div>
+            <div>
+                <label for="carModel">Car Model</label>
+                <input type="text" id="carModel" placeholder="Alto, Innova..." required>
+            </div>
+            <div>
+                <label for="fuelType">Fuel Type</label>
+                <input type="radio" name="fuelType" value="petrol"> Petrol
+                <input type="radio" name="fuelType" value="diesel"> Diesel
+                <input type="radio" name="fuelType" value="LPG"> LPG
+                <input type="radio" name="fuelType" value="others"> Others
+            </div>
+            <div>
+                <label for="appointmentDate">Appointment Date</label>
+                <input type="date" id="appointmentDate" required>
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <textarea id="address" required></textarea>
+            </div>
+            <button type="submit">Book</button>
+        </form>
+      </main>
+      <br><br>
+      <footer>
+        <span>Copyright &copy; 2020 AutoMob-Mechanic.</span> &nbsp;
+        <span>All Right Reserved.</span>
+      </footer>
+
+      <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
+    
+            // Collect form data
+            const name = document.getElementById("name").value;
+            console.log(name);
+            const emailID = document.getElementById("emailID").value;
+            console.log(emailID);
+            const phNo =  document.getElementById("phoneNo").value;
+            console.log(phNo);
+            const selectService = document.getElementById("selectService").value;
+            console.log(selectService);
+            const carMake = document.getElementById("carMake").value;
+            console.log(carMake);
+            const carModel = document.getElementById("carModel").value;
+            console.log(carModel);
+            const fuelType = document.querySelector('input[name="fuelType"]:checked')?.value;
+            console.log(fuelType);
+            const appointmentDate = new Date(document.getElementById("appointmentDate").value).toISOString().split('T')[0];
+
+            console.log(appointmentDate);
+            const address = document.getElementById("address").value;
+            console.log(address);
+            
+
+           
+
+
+
+            // Send the data to the backend
+            fetch("http://localhost:5000/booking", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    emailID,
+                    phNo,
+                    selectService,
+                    carMake,
+                    carModel,
+                    fuelType,
+                    appointmentDate,
+                    address
+                })
+            })
+
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = "booking-success.html";  // Redirect after successful booking
+                } else {
+                    alert("Booking failed: " + data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while booking the service.");
+            });
+        });
+    </script>
+    
+</body>
+</html>

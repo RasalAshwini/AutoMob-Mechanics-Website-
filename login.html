@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="booking.css">
+    <title>Login or Register | AutoMob-Mechanic</title>
+</head>
+<body>
+    <header>
+        <b><a href="home.html">AutoMob-Mechanic</a></b>
+        <nav>
+            <a href="home.html">Home</a> |
+            <a href="login.html" class="active">Login</a> |
+            <a href="about as.html">about us </a>|
+            <a href="mailto:contact@automob.co.in">contact@automob.co.in &#9993;</a> |
+            <a>999-999-9999 &#9743;</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="text-align: center; color: cornflowerblue;">Login or Register</h1>
+        <form id="authForm" style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid gray; border-radius: 8px; background-color: #f0f8ff;">
+            <div style="margin-bottom: 15px;">
+                <label for="username" style="display: block; font-weight: bold; margin-bottom: 5px;">Username:</label>
+                <input type="text" id="username" required style="width: 100%; padding: 10px; border: 1px solid gray; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="password" style="display: block; font-weight: bold; margin-bottom: 5px;">Password:</label>
+                <input type="password" id="password" required style="width: 100%; padding: 10px; border: 1px solid gray; border-radius: 5px;">
+            </div>
+            <div style="text-align: center;">
+                <button type="button" id="loginBtn" style="padding: 10px 20px; background-color: cornflowerblue; color: white; border: none; border-radius: 5px;">Login</button>
+                <button type="button" id="registerBtn" style="padding: 10px 20px; background-color: green; color: white; border: none; border-radius: 5px; margin-left: 10px;">Register</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <span>Copyright &copy; 2024 AutoMob-Mechanic.</span>&nbsp;
+        <span>All Rights Reserved.</span>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

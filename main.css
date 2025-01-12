@@ -1,0 +1,484 @@
+header{
+    background-color: cornflowerblue;
+    color:white;
+    height:40px;
+    padding:10px;
+}
+nav {
+    display: inline;
+    float: right;
+}
+* {
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+button,input[type="button"] {
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(61,126,248);
+    color: white;
+    border: none;
+    display: inline;
+    pointer-events: auto;
+}
+b{
+    margin-left: 30px;
+    font-size: 22px;
+}
+.active {
+    border-bottom:2px solid white;
+}
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+main {
+    margin-left: 0; /* Adjust margin to prevent horizontal overflow */
+    padding: 0;
+}
+
+#service {
+    padding: 50px 20px;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; /* Allows horizontal scrolling if content overflows */
+}
+
+
+#service h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    #service table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; /* Adds horizontal scrolling */
+    }
+
+    #service table td {
+        display: block;
+        text-align: left; /* Align text to the left for readability */
+    }
+
+    main {
+        margin-left: 0; /* Remove the left margin on small screens */
+    }
+}
+
+#service img {
+    width: 60%; /* Ensures images are responsive */
+    height: auto;
+    max-width: 60%; /* Prevents the image from exceeding the container width */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+#service button {
+    background-color: #ff6600; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#service button:hover {
+    background-color: #e55b00; /* Darkens on hover */
+}
+
+#service div {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#service {
+    min-height: 100vh; /* Makes the section occupy at least 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+
+#why-choose-us {
+    position: relative; /* Ensure positioning context for the pseudo-element */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, white 50%); /* Black top half and white bottom half */
+    padding: 50px 20px;
+    text-align: center;
+    color:white;
+    min-height: 100vh; /* Ensures the section takes up full height of the viewport */
+}
+
+#why-choose-us::before {
+    content: ""; /* Pseudo-element for the image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* The image will cover only the top half */
+   
+    background-size: cover; /* Ensures the image covers the black part */
+}
+
+    #why-choose-us h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: white;
+        z-index: 2;
+    }
+
+    #why-choose-us p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #555;
+        z-index: 1;
+    }
+ #why-choose-us img{
+    width: 100%;
+    height: 60%;
+    display: inline;
+
+ }
+    .service-item {
+        display: inline-block; /* Display items in a single line */
+        margin-right: 20px; /* Add space between items */
+        background-color: white;
+        padding: 20px;
+        width: 150px; /* Fixed width for each item */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        vertical-align: top; /* Aligns items to the top */
+    }
+
+    .service-item h3 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .service-item p {
+        font-size: 0.9rem !important; 
+        color: #777;
+    }
+
+    .service-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: 768px) {
+        #why-choose-us h2 {
+            font-size: 1.6rem;
+        }
+
+        #why-choose-us p {
+            font-size: 1rem;
+        }
+
+        .service-item {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 0.9rem !important; 
+        }
+
+        .service-item p {
+            font-size: 0.3rem;
+        }
+    }
+
+    #auto-mechanica-advantages {
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+        text-align: center; /* Center-align the section content */
+    }
+    
+    #auto-mechanica-advantages h2 {
+        color: black;
+        font-size: 3rem;
+        margin-bottom: 30px; /* Add some space below the header */
+    }
+    
+    #auto-mechanica-advantages .advantage-container {
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        gap: 20px; /* Add spacing between items */
+    }
+    
+    .advantage-item {
+        display: inline-block;
+        position: relative;
+        flex: 1 1 calc(22% - 20px); /* Flex item takes 22% of width minus gap */
+        max-width: 22%; /* Ensures items don't grow larger than this */
+        margin: 10px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .advantage-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: white;
+    }
+    
+    .advantage-item p {
+        font-size: 1rem;
+        color: white;
+    }
+    
+    .advantage-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Background images for each advantage with separate images */
+    #auto-mechanica-advantages .advantage-item#genuine-oem-products {
+        background-image: url('Genuine.jpg'); /* Image for Genuine OEM Products */
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #auto-mechanica-advantages .advantage-item#fair-pricing {
+        background-image: url('Fair & Transparent.png'); /* Image for Fair & Transparent Pricing */
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #auto-mechanica-advantages .advantage-item#state-of-the-art-workshop {
+        background-image: url('state-of-the-art.jpg'); /* Image for State Of The Art Workshop */
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #auto-mechanica-advantages .advantage-item#door-step-service {
+        background-image: url('door-step.jpg'); /* Image for Door Step Express Service */
+        background-size: cover;
+        background-position: center;
+    }
+    
+    /* Add text shadow for better visibility on images */
+    .advantage-item h3, .advantage-item p {
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for text contrast */
+    }
+    
+    @media screen and (max-width: 768px) {
+        .advantage-item {
+            flex: 1 1 calc(48% - 20px); /* Adjust size for smaller screens */
+            max-width: 48%;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .advantage-item {
+            flex: 1 1 100%; /* Full width for very small screens */
+            max-width: 100%;
+        }
+    }
+    
+
+    #we-are-at {
+        padding: 50px 20px;
+        background-color: #f0f8ff; /* Light background color */
+        text-align: center; /* Center align the section */
+    }
+    
+    #we-are-at h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+        color: #333; /* Darker text for contrast */
+    }
+    
+    .stats-container {
+        display: flex;
+        justify-content: center; /* Center-align the stats horizontally */
+        align-items: center; /* Align items vertically */
+        flex-wrap: wrap; /* Enable wrapping for responsiveness */
+        gap: 30px; /* Add spacing between stat items */
+    }
+    
+    .stat-item {
+        flex: 1 1 calc(30% - 20px); /* Take up 30% width with spacing adjustment */
+        max-width: 30%; /* Prevent growing beyond 30% */
+        background: none;  /* White card background */
+        border: none; 
+        padding: 0;
+        box-shadow: none;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
+    
+    .stat-item:hover {
+        transform: translateY(-10px); /* Slight upward movement on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    }
+
+    .stat-icon {
+        width: 120px; /* Set a consistent width for logos */
+        height: 120px;
+        margin-bottom: 1px;
+         /* Ensures the logo maintains aspect ratio */
+    }
+    
+    .stat-item h3 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #007bff; /* Primary color for numbers */
+        font-weight: bold;
+    }
+    
+    .stat-item p {
+        font-size: 1.2rem;
+        color: #555; /* Secondary color for labels */
+    }
+    
+    @media screen and (max-width: 768px) {
+        .stat-item {
+            flex: 1 1 calc(45% - 20px); /* Adjust width for tablets */
+            max-width: 45%;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .stat-item {
+            flex: 1 1 100%; /* Full width for smaller screens */
+            max-width: 100%;
+        }
+    }
+    
+    /* Section Wrapper */
+#how-it-works {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+/* Background Image for Header */
+.header-image {
+    background-image: url('black-car.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    height: 500px;
+    width: auto;
+    justify-content: center;
+    position: relative;
+}
+
+.header-image h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.header-image p {
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Steps Container */
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -80px; /* Pull the blocks into the image */
+    position: relative;
+    z-index: 2; /* Ensure blocks are above the image */
+}
+
+/* Step Item Styling */
+.step-item {
+    flex: 1 1 calc(22% - 20px); /* Adjust width to 22% with spacing */
+    max-width: 20%;
+   
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    min-height: 200px;
+    width: 100px;
+    color: white;
+}
+
+/* Hover Effect */
+.step-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Step Content */
+.step-content {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.step-content h3 {
+    font-size: 6rem;
+    
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.step-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.step-content p {
+    font-size: 1rem;
+   color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .step-item {
+        flex: 1 1 calc(45% - 20px); /* Adjust width for tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .step-item {
+        flex: 1 1 100%; /* Full width for smaller screens */
+    }
+}
